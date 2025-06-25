@@ -36,6 +36,9 @@ function addRound() {
 }
 
 function removeRound(index) {
+  const confirmDelete = confirm(`Are you sure you want to delete Round ${index + 1}?`);
+  if (!confirmDelete) return;
+
   rounds.splice(index, 1);
   localStorage.setItem("rounds", JSON.stringify(rounds));
   updateDisplay();
