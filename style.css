@@ -57,21 +57,33 @@ body::after {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center; /* center the title */
-  position: relative;
-  height: 60px;
+  justify-content: space-between;
   padding: 0 16px;
+  height: 60px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid #3880c2;
 }
 
+.app-header .left-space {
+  width: 32px; /* keeps the layout balanced */
+}
+
 .app-header h1 {
-  margin: 0;
+  flex-grow: 1;
+  text-align: center;
   font-size: 24px;
   font-weight: 600;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 /* Score input area */
 .score-input {
@@ -253,17 +265,6 @@ button:hover {
   color: #aaa;
 }
 
-.menu-btn {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
 
 
 .menu-btn:active {
