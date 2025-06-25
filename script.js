@@ -13,13 +13,17 @@ function updateDisplay() {
     row.className = "row";
     row.innerHTML = `
       <div class="cell label">${i + 1}</div>
+      <div class="cell">${r.them}</div>
       <div class="cell">${r.us}</div>
-      <div class="cell">${r.them}</div>     
       <button class="cell delete" onclick="removeRound(${i})">✕</button>
     `;
     roundsDiv.appendChild(row);
   });
+
+  // ✅ Auto-scroll to the latest round
+  roundsDiv.scrollTop = roundsDiv.scrollHeight;
 }
+
 
 function addRound() {
   const themInput = document.getElementById("themInput");
