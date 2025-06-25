@@ -56,7 +56,7 @@ function showAbout() {
   document.getElementById('modal-body').innerHTML = `
     <h3>About No Chivas</h3>
     <p>This app helps you keep track of rounds and score — built as a PWA.</p>
-    <p>Version: 1.0.1.2</p>
+    <p>Version: 1.0.1.1</p>
     <p>Developed by: Dani Diaz</p>
     <p>Source code: <a href="https://github.com/mangu/dominos">GitHub</a></p>
   `;
@@ -91,7 +91,7 @@ let startTime = Date.now();
 function updateTimer() {
   const now = Date.now();
   const elapsed = Math.floor((now - startTime) / 1000);
-  const minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const minutes = String(Math.floor(elapsed / 60)).padStart(1, '0');
   const seconds = String(elapsed % 60).padStart(2, '0');
   document.getElementById("timer").textContent = `${minutes}:${seconds}`;
 }
