@@ -4,12 +4,14 @@ body {
   background: #f9f9f9;
   font-family: "Segoe UI", sans-serif;
   color: #333;
+  overflow-y: auto;
 }
 
 .app {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
+  width: 95%;
 }
 
 .score-input {
@@ -40,6 +42,7 @@ input {
   padding: 10px;
   font-size: 18px;
   width: 100%;
+  max-width: 120px;
   text-align: center;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -87,15 +90,15 @@ button:hover {
 }
 .floating-timer {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   background: #4A90E2;
   color: white;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 16px;
   font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 999;
 }
 
@@ -167,7 +170,7 @@ button:hover {
   background-color: #e53935;
 }
 .rounds-scroll {
-  max-height: 300px;
+  max-height: 40vh; /* ~40% of viewport height */
   overflow-y: auto;
   margin-bottom: 10px;
 }
