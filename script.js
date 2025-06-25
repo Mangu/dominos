@@ -22,14 +22,17 @@ function updateDisplay() {
 }
 
 function addRound() {
-  const themVal = parseInt(document.getElementById("themInput").value) || 0;
-  const usVal = parseInt(document.getElementById("usInput").value) || 0;
+  const themInput = document.getElementById("themInput");
+  const usInput = document.getElementById("usInput");
+  const themVal = parseInt(themInput.value) || 0;
+  const usVal = parseInt(usInput.value) || 0;
+
   rounds.push({ them: themVal, us: usVal });
   localStorage.setItem("rounds", JSON.stringify(rounds));
-  
-  document.getElementById("themInput").value = "";
-  document.getElementById("usInput").value = "";
   updateDisplay();
+
+  themInput.value = "";
+  usInput.value = "";
 }
 
 function removeRound(index) {
@@ -42,13 +45,12 @@ function resetGame() {
   if (confirm("Are you sure you want to reset all scores?")) {
     rounds = [];
     localStorage.removeItem("rounds");
-    startTime = Date.now(); // reset timer
+    startTime = Date.now(); // Reset timer too
     updateDisplay();
   }
 }
 
-updateDisplay();
-
+// Timer logic
 let startTime = Date.now();
 
 function updateTimer() {
@@ -61,3 +63,4 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 
+updateDisplay();
