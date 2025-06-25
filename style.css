@@ -57,9 +57,10 @@ body::after {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* center the title */
   position: relative;
-  padding: 16px;
+  height: 60px;
+  padding: 0 16px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid #3880c2;
 }
@@ -68,9 +69,9 @@ body::after {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
-  flex: 1;
-  text-align: center;
-  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 /* Score input area */
 .score-input {
@@ -262,7 +263,6 @@ button:hover {
   font-size: 24px;
   color: white;
   cursor: pointer;
-  z-index: 1; /* Ensures button is clickable even near edges */
 }
 
 
