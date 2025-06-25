@@ -53,10 +53,10 @@ body::after {
 
 /* Header */
 .app-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   background-color: #4A90E2;
   color: white;
   height: 60px;
@@ -66,26 +66,32 @@ body::after {
 }
 
 .app-header h1 {
+  margin: 0;
   font-size: 24px;
   font-weight: 600;
-  margin: 0;
-  pointer-events: none; /* So it doesn’t block clicks */
+  flex-grow: 1;
+  text-align: center;
 }
 
 .menu-btn {
   position: absolute;
-  right: 16px;
   top: 50%;
+  right: 16px;
   transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
-  padding: 0;
-  height: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
   width: 32px;
+  padding: 0;
 }
+
 
 /* Score input area */
 .score-input {
