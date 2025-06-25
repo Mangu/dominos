@@ -39,6 +39,10 @@ function addRound() {
   usInput.value = "";
 }
 
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('hidden');
+}
+
 function removeRound(index) {
   const confirmDelete = confirm(`Are you sure you want to delete Round ${index + 1}?`);
   if (!confirmDelete) return;
@@ -47,6 +51,30 @@ function removeRound(index) {
   localStorage.setItem("rounds", JSON.stringify(rounds));
   updateDisplay();
 }
+
+function showAbout() {
+  document.getElementById('modal-body').innerHTML = `
+    <h3>About No Chivas</h3>
+    <p>This app helps you keep track of rounds and score — built as a PWA.</p>
+    <p>Version: 1.0.1.1</p>
+    <p>Developed by: Dani Diaz</p>
+    <p>Source code: <a href="https://github.com/mangu/dominos">GitHub</a></p>
+  `;
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function showSettings() {
+  document.getElementById('modal-body').innerHTML = `
+    <h3>Settings</h3>
+    <p>Settings panel coming soon.</p>
+  `;
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+}
+
 
 function resetGame() {
   if (confirm("Are you sure you want to reset all scores?")) {
