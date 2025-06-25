@@ -55,17 +55,22 @@ body::after {
 .app-header {
   background-color: #4A90E2;
   color: white;
-  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid #3880c2;
-  position: relative;
-  text-align: center;
 }
 
 .app-header h1 {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
+  flex: 1;
+  text-align: center;
+  pointer-events: none; /* avoids accidental overlap issues */
 }
 /* Score input area */
 .score-input {
@@ -257,6 +262,7 @@ button:hover {
   font-size: 24px;
   color: white;
   cursor: pointer;
+  z-index: 1; /* Ensures button is clickable even near edges */
 }
 
 
