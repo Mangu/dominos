@@ -55,11 +55,11 @@ body::after {
 .app-header {
   background-color: #4A90E2;
   color: white;
-  text-align: center;
-  padding: 20px 10px;
+  padding: 20px 16px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid #3880c2;
   position: relative;
+  text-align: center;
 }
 
 .app-header h1 {
@@ -67,7 +67,6 @@ body::after {
   font-size: 24px;
   font-weight: 600;
 }
-
 /* Score input area */
 .score-input {
   display: flex;
@@ -250,16 +249,14 @@ button:hover {
 
 .menu-btn {
   position: absolute;
-  top: 50%;
   right: 16px;
+  top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 8px;
 }
 
 
