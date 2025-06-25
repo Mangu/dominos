@@ -32,20 +32,25 @@
     </div>
 
     <div class="scoreboard">
-      <div class="row header">
-        <div class="cell label">Round</div>
-        <div class="cell">Them</div>
-        <div class="cell">Us</div>
-        <div class="cell"></div>
-      </div>
-      <div id="rounds"></div>
-      <div class="row total-row">
-        <div class="cell label">Total</div>
-        <div class="cell" id="themTotal">0</div>
-        <div class="cell" id="usTotal">0</div>
-        <div class="cell"></div>
-      </div>
-    </div>
+        <div class="row header">
+            <div class="cell label">Round</div>
+            <div class="cell">Them</div>
+            <div class="cell">Us</div>
+            <div class="cell"></div>
+        </div>
+
+        <!-- Scrollable area -->
+        <div id="rounds" class="rounds-scroll"></div>
+
+        <!-- Always visible total row -->
+        <div class="row total-row">
+            <div class="cell label">Total</div>
+            <div class="cell" id="themTotal">0</div>
+            <div class="cell" id="usTotal">0</div>
+            <div class="cell"></div>
+        </div>
+        </div>
+
   </div>
   <script src="script.js"></script>
   <div class="floating-timer" id="timer">00:00</div>

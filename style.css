@@ -166,6 +166,21 @@ button:hover {
 .delete:hover {
   background-color: #e53935;
 }
+.rounds-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+/* Optional: style scroll bar for better look */
+.rounds-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.rounds-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
 
 /* Mobile adjustments */
 @media (max-width: 480px) {

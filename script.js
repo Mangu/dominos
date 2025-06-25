@@ -26,9 +26,10 @@ function addRound() {
   const usVal = parseInt(document.getElementById("usInput").value) || 0;
   rounds.push({ them: themVal, us: usVal });
   localStorage.setItem("rounds", JSON.stringify(rounds));
-  updateDisplay();
+  
   document.getElementById("themInput").value = "";
   document.getElementById("usInput").value = "";
+  updateDisplay();
 }
 
 function removeRound(index) {
