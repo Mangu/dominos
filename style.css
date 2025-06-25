@@ -57,25 +57,24 @@ body::after {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* space between title and menu */
+  justify-content: space-between;
   padding: 0 16px;
   height: 60px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid #3880c2;
+  position: relative;
 }
 
 .app-header h1 {
   font-size: 24px;
   font-weight: 600;
-  margin: 0 auto; /* center it in the space */
+  margin: 0 auto;
   text-align: center;
-  flex: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none; /* Let clicks pass through to buttons */
 }
-
-.app-header .left-space {
-  width: 32px; /* keeps the layout balanced */
-}
-
 
 .menu-btn {
   font-size: 24px;
@@ -83,7 +82,7 @@ body::after {
   border: none;
   color: white;
   cursor: pointer;
-  padding: 8px;
+  z-index: 1; /* Ensure it's above the absolute h1 */
 }
 /* Score input area */
 .score-input {
@@ -97,6 +96,9 @@ body::after {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.app-header .left-space {
+  width: 32px; /* keeps the layout balanced */
+}
 .score-input div {
   flex: 1 1 45%;
   min-width: 100px;
