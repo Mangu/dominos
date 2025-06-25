@@ -1,4 +1,4 @@
-const CACHE_NAME = 'no-chivas-v1.03';
+const CACHE_NAME = 'no-chivas-v1.04';
 const urlsToCache = [
   './',
   './index.html',
@@ -33,5 +33,7 @@ self.addEventListener('activate', event => {
       )
     )
   );
+  self.clients.claim(); // <-- ensures control of open clients
 });
+
 
