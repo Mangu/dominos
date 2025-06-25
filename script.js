@@ -13,8 +13,8 @@ function updateDisplay() {
     row.className = "row";
     row.innerHTML = `
       <div class="cell label">${i + 1}</div>
-      <div class="cell">${r.them}</div>
       <div class="cell">${r.us}</div>
+      <div class="cell">${r.them}</div>     
       <button class="cell delete" onclick="removeRound(${i})">✕</button>
     `;
     roundsDiv.appendChild(row);
