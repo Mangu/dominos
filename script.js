@@ -45,7 +45,7 @@ function resetGame() {
   if (confirm("Are you sure you want to reset all scores?")) {
     rounds = [];
     localStorage.removeItem("rounds");
-    startTime = Date.now(); // Reset timer too
+    startTime = Date.now();
     updateDisplay();
   }
 }
