@@ -108,3 +108,52 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
+let wakeLock = null;
+let fallbackInterval = null;
+
+async function requestWakeLock() {
+  if ('wakeLock' in navigator) {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      console.log('Wake Lock is active');
+
+      wakeLock.addEventListener('release', () => {
+        console.log('Wake Lock was released');
+      });
+    } catch (err) {
+      console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+    }
+  } else {
+    console.log('Wake Lock not supported, using fallback');
+    enableFallbackWakeLock();
+  }
+}
+
+function enableFallbackWakeLock() {
+  // Prevent sleep by playing a silent audio loop (some iOS support)
+  const audio = new Audio();
+  audio.loop = true;
+  audio.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQAAAAA="; // silent
+  audio.play().catch(() => {
+    // fallback failed silently
+  });
+
+  // OR use a periodic scroll trick (some cases)
+  fallbackInterval = setInterval(() => {
+    window.scrollBy(0, 1);
+    window.scrollBy(0, -1);
+  }, 30000); // every 30s
+}
+
+// Re-request Wake Lock if tab becomes active again
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    requestWakeLock();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  //applyNames();
+  requestWakeLock(); // 👈 Add here
+});
