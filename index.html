@@ -14,8 +14,9 @@
 </head>
 <body>
     <div class="app-header">
-        <h1>No Chivas</h1>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <button class="header-btn" onclick="resetGame()">＋</button>
+      <h1>No Chivas</h1>
+      <button class="header-btn" onclick="toggleMenu()">☰</button>
     </div>
     <div class="menu-dropdown hidden" id="menu">
         <button onclick="showAbout()">About</button>
@@ -36,7 +37,6 @@
 
     <div class="actions">
       <button onclick="addRound()">Add round</button>
-      <button onclick="resetGame()">Reset</button>
     </div>
 
     <div class="scoreboard">

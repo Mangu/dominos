@@ -365,3 +365,36 @@ button:hover {
   border-radius: 6px;
 }
 
+.app-header {
+  background-color: #4A90E2;
+  color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+}
+
+.header-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 0 12px;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
