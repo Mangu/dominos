@@ -1,4 +1,4 @@
-# Privacy Policy for "No Chivas" and "Sandbagged"
+# Privacy Policy for "No Chivas", "Sandbagged" and "Matt'd"
 
 "No Chivas" and "Sandbagged" aree a local-only utility applications designed to help players keep track of their Domino and Spades game scores. We take your privacy seriously. 
 
